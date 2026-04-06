@@ -10,3 +10,28 @@ dependencies = [
     "pydantic-settings>=2.13.1",
     "uvicorn[standard]>=0.34",
 ]
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.2",
+    "ruff>=0.11",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py313"
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes
+    "I",   # isort
+    "B",   # flake8-bugbear
+    "UP",  # pyupgrade
+]
+ignore = []
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
